@@ -3,10 +3,19 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Image healthBarImage;
+    public RectTransform rectTransform;
 
     public void UpdateHealth(float health)
     {
-        healthBarImage.rectTransform.sizeDelta = new Vector2(health, healthBarImage.rectTransform.sizeDelta.y);
+        // Get the current offset values
+        Vector2 offsetMax = rectTransform.offsetMax;
+        Vector2 offsetMin = rectTransform.offsetMin;
+
+        // Update the right position
+        offsetMax.x = health; // Set the new right position here
+
+        // Apply the changes to the rectTransform
+        rectTransform.offsetMax = offsetMax;
+        rectTransform.offsetMin = offsetMin;
     }
 }

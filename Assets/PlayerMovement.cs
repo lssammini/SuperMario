@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     private Rigidbody2D rb;
     private Animator anim;
-    private float health = 100f;
+    public float health = -433;
     public int state;
     public bool hit = false;
     public float horizontal;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        hit = false;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
@@ -28,6 +30,14 @@ public class PlayerController : MonoBehaviour
     void MakeDamage(float damage)
     {
         health -= damage;
+
+        if (health <= -450)
+        {
+            Debug.Log("fim de jogo, jogador 1 ganhou");
+            SceneManager.UnloadSceneAsync("Gamee"); 
+            SceneManager.LoadScene("StartMenu");
+        }
+
         healthBar.UpdateHealth(health);
     }
 
@@ -65,6 +75,15 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        if (onEnemy && hit)
+        {
+            Debug.Log("hit");
+            MakeDamage(damage);
+            Debug.Log("-" + damage + " vida= " + health);
+        }
+
+
         // Detecta as teclas pressionadas
         if (Input.GetKey(KeyCode.A))
         {
@@ -104,10 +123,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (onEnemy && hit)
-        {
-            Debug.Log("hit");
-        }
+      
+
         if (Input.GetKey(KeyCode.F))
         {
             //hit = true;
