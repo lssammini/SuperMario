@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 254942924}
   - component: {fileID: 254942932}
   m_Layer: 6
-  m_Name: Idle_0
+  m_Name: Idle_P2
   m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 254942922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.24, y: -9.081833, z: 0.3230442}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 290493758}
@@ -209,9 +209,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 10
-  jumpForce: 20
+  jumpForce: 24
   onGround: 0
-  healthBar: {fileID: 254942926}
+  healthBar: {fileID: 254942932}
   health: -433
   state: 0
   hit: 0
@@ -298,9 +298,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.46}
+  m_Offset: {x: 0, y: -0.73}
   serializedVersion: 2
-  m_Radius: 0.7422247
+  m_Radius: 0.54
 --- !u!61 &254942928
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -454,10 +454,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 254942922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79c89657e0f2f5a4d81d935ddc4a6f84, type: 3}
+  m_Script: {fileID: 11500000, guid: b155e6ce79229684e9ca608d4e610239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rectTransform: {fileID: 1972010388}
+  rectTransform: {fileID: 629957531}
 --- !u!1 &290493757
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290493757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 220.98972, y: 162.06184, z: -0.3230442}
+  m_LocalPosition: {x: 248.15, y: 166.55, z: -0.3230442}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -746,7 +746,7 @@ Transform:
   m_GameObject: {fileID: 728200615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 213.97356, y: 150.73001, z: 0.059871994}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1421935820}
@@ -883,9 +883,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.46}
+  m_Offset: {x: 0, y: -0.73}
   serializedVersion: 2
-  m_Radius: 0.7422247
+  m_Radius: 0.54
 --- !u!61 &728200621
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 10
-  jumpForce: 18
+  jumpForce: 24
   onGround: 0
   healthBar: {fileID: 728200623}
   health: -433
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c89657e0f2f5a4d81d935ddc4a6f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rectTransform: {fileID: 629957531}
+  rectTransform: {fileID: 1972010388}
 --- !u!70 &728200625
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1304,7 +1304,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.99589
+  orthographic size: 10.338158
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1328,7 +1328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305171108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 217.57, y: 160.53, z: -10}
+  m_LocalPosition: {x: 217.57, y: 159.69, z: -10}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1675,7 +1675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421935819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.4264004, y: 2.25, z: -0.059871994}
+  m_LocalPosition: {x: -16.36, y: 7.51, z: -0.059871994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2040,8 +2040,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -390.86768, y: -87.827}
-  m_SizeDelta: {x: -82.86464, y: -98.417}
+  m_AnchoredPosition: {x: -390.9, y: -87.827}
+  m_SizeDelta: {x: -82.931, y: -98.417}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972010389
 MonoBehaviour:

@@ -9,7 +9,7 @@ public class PlayerController2 : MonoBehaviour
     public float movespeed;
     public float jumpForce;
     public bool onGround;
-    public HealthBar healthBar;
+    public Player2Life healthBar;
     private Rigidbody2D rb;
     private Animator anim;
     public float health = -433;
@@ -34,9 +34,10 @@ public class PlayerController2 : MonoBehaviour
         {
             Debug.Log("fim de jogo, jogador 2 ganhou");
             SceneManager.UnloadSceneAsync("Gamee");
-            SceneManager.LoadScene("StartMenu");
+            SceneManager.LoadScene("FinalMenu");
         }
         Debug.Log("-" + damage + " vida= " + health);
+
         healthBar.UpdateHealth(health);
     }
 
@@ -83,12 +84,12 @@ public class PlayerController2 : MonoBehaviour
         }
 
         // Detecta as teclas pressionadas
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) && !hit)
         {
             horizontal = -1f;
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow) && !hit)
         {
             horizontal = 1f;
             transform.localScale = new Vector3(1f, 1f, 1f);
@@ -98,7 +99,7 @@ public class PlayerController2 : MonoBehaviour
             horizontal = 0f;
         }
 
-        if (Input.GetKey(KeyCode.UpArrow) && onGround)
+        if (Input.GetKey(KeyCode.UpArrow) && onGround && !hit)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }

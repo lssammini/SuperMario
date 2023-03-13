@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("fim de jogo, jogador 1 ganhou");
             SceneManager.UnloadSceneAsync("Gamee"); 
-            SceneManager.LoadScene("StartMenu");
+            SceneManager.LoadScene("FinalMenu");
         }
 
         healthBar.UpdateHealth(health);
@@ -85,12 +85,12 @@ public class PlayerController : MonoBehaviour
 
 
         // Detecta as teclas pressionadas
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && !hit)
         {
             horizontal = -1f;
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) && !hit)
         {
             horizontal = 1f;
             transform.localScale = new Vector3(1f, 1f, 1f);
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
             horizontal = 0f;
         }
 
-        if (Input.GetKey(KeyCode.Space) && onGround)
+        if (Input.GetKey(KeyCode.Space) && onGround && !hit)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }

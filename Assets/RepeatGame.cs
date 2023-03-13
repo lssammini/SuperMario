@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartGame : MonoBehaviour
+public class RepeatGame : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         //SceneManager.UnloadSceneAsync("TelaInicial");
         //SceneManager.UnloadSceneAsync("Rpetir");
         SceneManager.UnloadSceneAsync("Gamee");
-        SceneManager.UnloadSceneAsync("FinalMenu");
 
     }
 
@@ -21,9 +19,9 @@ public class StartGame : MonoBehaviour
         if (Input.anyKey)
         {
             Debug.Log("A key or mouse click has been detected");
-            SceneManager.UnloadSceneAsync("StartMenu");
+            SceneManager.UnloadSceneAsync("FinalMenu");
             SceneManager.LoadScene("Gamee");
-            
+
             //SceneManager.UnloadSceneAsync("Rpetir");
         }
     }
